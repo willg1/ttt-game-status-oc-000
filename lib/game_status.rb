@@ -6,13 +6,9 @@ end
 =end
 # Define your WIN_COMBINATIONS constant
 # Board with winning X in the top row.
-board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
+board = ["X", "X", "X", " ", " ", " ", " ", " ", " "]
 
-# Definition of indexes that compose a top row win.
-def move(board)
-  #top_row_win = [0,1,2,3,4,5,6,7,8]
-
-  WIN_COMBINATIONS = [
+ WIN_COMBINATIONS = [
   [0,1,2],  # Top row
   [3,4,5],  # Middle row
   [6,7,8],  # Bottom row
@@ -23,10 +19,11 @@ def move(board)
   [2,4,6] # Right diagonally down row
   # ETC, an array for each win combination
 ]
-
+# Definition of indexes that compose a top row win.
+def move(board)
 
   # Check if each index in the top_row_win array contains an "X"
-  if board[WIN_COMBINATIONS[0]] == "X" && board[WIN_COMBINATIONS[1]] == "X" && board[WIN_COMBINATIONS[2]] == "X"
+  if board[WIN_COMBINATIONS[0][0]] == "X" && board[WIN_COMBINATIONS[0][1]] == "X" && board[WIN_COMBINATIONS[0][2]] == "X"
     puts "X won in the top row"
   end
 =begin
